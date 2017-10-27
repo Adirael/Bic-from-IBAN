@@ -12,7 +12,8 @@ function getBIC(iban) {
         var banks = require("./AllCountries/" + country + ".json");
         var bankCode = iban.substring(4, 8).replace(/^0+/, '');
 
-        var item = banks.list.find((d) => {
+        var item = banks.list.find(
+        function(d) {
             return d.id === bankCode
         });
         
